@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Espelhador de URL</title>
+  <style>
+    body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #0f172a; color: #fff; }
+    .box { background: #1e293b; padding: 2rem; border-radius: 12px; width: 100%; max-width: 440px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    input { width: 100%; padding: 12px; margin: 12px 0; border: 1px solid #334155; border-radius: 8px; background: #0f172a; color: #fff; box-sizing: border-box; font-size: 15px; }
+    button { width: 100%; padding: 12px; background: #2563eb; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 15px; }
+    button:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Espelhar Página</h2>
+    <form action="/api/proxy" method="GET">
+      <input type="text" name="url" placeholder="https://exemplo.com" required />
+      <button type="submit">Carregar Página</button>
+    </form>
+  </div>
+</body>
+</html>
