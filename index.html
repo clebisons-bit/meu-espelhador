@@ -1,23 +1,2363 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Espelhador de URL</title>
-  <style>
-    body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #0f172a; color: #fff; }
-    .box { background: #1e293b; padding: 2rem; border-radius: 12px; width: 100%; max-width: 440px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-    input { width: 100%; padding: 12px; margin: 12px 0; border: 1px solid #334155; border-radius: 8px; background: #0f172a; color: #fff; box-sizing: border-box; font-size: 15px; }
-    button { width: 100%; padding: 12px; background: #2563eb; color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 15px; }
-    button:hover { background: #1d4ed8; }
-  </style>
-</head>
-<body>
-  <div class="box">
-    <h2>Espelhar Página</h2>
-    <form action="/api/proxy" method="GET">
-      <input type="text" name="url" placeholder="https://exemplo.com" required />
-      <button type="submit">Carregar Página</button>
-    </form>
-  </div>
-</body>
+<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head><base href="https://fm.usp.br/museu/portal/">
+
+<!-- -->
+		<meta charset="utf-8" />
+		<title>:: FMUSP </title>
+		<meta name="keywords" content="FMUSP" />
+		<meta name="description" content="" />
+		<meta name="Author" content="Adriano Santos [www.dna.com.br]" />
+		<meta content=":: FMUSP " property="og:title" />
+		<meta name="robots" content="index, follow">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+
+		
+		<!-- Favicon -->
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="/fmusp/assets/images/favicon.ico" />
+
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-PRNZBNFZ2B"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-PRNZBNFZ2B');
+		</script>
+
+
+		<!-- WEB FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&subset=latin,latin-ext,cyrillic,cyrillic-ext" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="/fmusp/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/font-awesome.css" rel="stylesheet" type="text/css" />
+		
+		<link href="/fmusp/assets/css/sky-forms.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+		
+		<link href="/fmusp/assets/css/line-icons.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/plugins/owl-carousel/owl.pack.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/plugins/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/animate.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/flexslider.css" rel="stylesheet" type="text/css" />
+
+		<!-- REVOLUTION SLIDER -->
+		<link href="/fmusp/assets/css/revolution-slider.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/layerslider.css" rel="stylesheet" type="text/css" />
+
+		<!-- BLOG -->
+		<link href="/fmusp/assets/css/layout-blog.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="/fmusp/assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/minify/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/layout.css?v=2" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/header-4.css" rel="stylesheet" type="text/css" />
+		
+		<link href="/fmusp/assets/css/footer-default.css" rel="stylesheet" type="text/css" />
+		<link href="/fmusp/assets/css/color_scheme/darkgreen.css" rel="stylesheet" type="text/css" id="color_scheme" />
+
+		<!-- SLICK -->
+		<link rel="stylesheet" type="text/css" href="/fmusp/assets/plugins/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="/fmusp/assets/plugins/slick/slick-theme.css"/>
+		
+		<script type="text/javascript" src="/fmusp/assets/plugins/jquery-2.2.3.min.js"></script>
+        <!-- FANCYBOX -->
+		<script type="text/javascript" src="/fmusp/assets/plugins/FancyBox/jquery.fancybox.js?v=2.1.7"></script>
+		<link rel="stylesheet" type="text/css" href="/fmusp/assets/plugins/FancyBox/jquery.fancybox.css?v=2.1.7" media="screen" />
+
+		<!-- Morenizr -->
+		<script type="text/javascript" src="/fmusp/assets/plugins/modernizr.min.js"></script>
+
+
+		<!--[if lte IE 8]>
+		<script src="/fmusp/assets/plugins/respond.js"></script>
+		<![endif]-->
+
+		<style type="text/css">
+			.btn-primary {
+				border-color:#004F71;
+				background-color:#004F71;
+			}
+
+			.btn-primary:hover {
+				border-color: #01405C;
+				background-color: #01405C;
+			}
+
+			/* .block { color: #fefefe !important; } */
+
+			.block { color: rgb(136, 136, 136); }
+
+			#topNav ul.nav>li.active2>a:before {
+				content:' ';
+				background-color: #BA0C2F;
+				height: 5px; width: 100%;
+				left: 0; top: 40px;
+				position: absolute;
+			}
+
+			#topNav ul.nav>li.active2>ul>li>a:hover {
+				background-color: #BA0C2F;
+			}
+			#topNav ul.nav>li.active2>ul>li>ul>li>a:hover {
+				background-color: #BA0C2F;
+			}
+
+			#topNav ul.nav>li.active3>a:before {
+				content:' ';
+				background-color: #FF9E1B;
+				height: 5px; width: 100%;
+				left: 0; top: 40px;
+				position: absolute;
+			}
+
+			#topNav ul.nav>li.active3>ul>li>a:hover {
+				background-color: #FF9E1B;
+			}
+			#topNav ul.nav>li.active3>ul>li>ul>li>a:hover {
+				background-color: #FF9E1B;
+			}
+
+			#topNav ul.nav>li.active4>a:before {
+				content:' ';
+				background-color: #A39382;
+				height: 5px; width: 100%;
+				left: 0; top: 40px;
+				position: absolute;
+			}
+
+			#topNav ul.nav>li.active4>ul>li>a:hover {
+				background-color: #A39382;
+			}
+			#topNav ul.nav>li.active4>ul>li>ul>li>a:hover {
+				background-color: #A39382;
+			}
+
+			#topNav ul.nav>li.active5>a:before {
+				content:' ';
+				background-color: #004F71;
+				height: 5px; width: 100%;
+				left: 0; top: 40px;
+				position: absolute;
+			}
+
+			#topNav ul.nav>li.active5>ul>li>a:hover {
+				background-color: #004F71;
+			}
+			#topNav ul.nav>li.active5>ul>li>ul>li>a:hover {
+				background-color: #004F71;
+			}
+
+			#topNav ul.nav>li.active6>a:before {
+				content:' ';
+				background-color: #00C7B1;
+				height: 5px; width: 100%;
+				left: 0; top: 40px;
+				position: absolute;
+			}
+
+			#topNav ul.nav>li.active6>ul>li>a:hover {
+				background-color: #00C7B1;
+			}
+			#topNav ul.nav>li.active6>ul>li>ul>li>a:hover {
+				background-color: #00C7B1;
+			}
+
+			#topNav ul.nav>li.active7>a:before {
+				content:' ';
+				background-color: #6A2A5B;
+				height: 5px; width: 100%;
+				left: 0; top: 40px;
+				position: absolute;
+			}
+
+			#topNav ul.nav>li.active7>ul>li>a:hover {
+				background-color: #6A2A5B;
+			}
+			#topNav ul.nav>li.active7>ul>li>ul>li>a:hover {
+				background-color: #6A2A5B;
+			}
+
+			.sticky-container{
+				/*background-color: #333;*/
+				padding: 0px;
+				margin: 0px;
+				position: fixed;
+				right: -119px;
+				top:350px;
+				width: 200px;
+				z-index: 99999;
+
+			}
+
+			.sticky li{
+				list-style-type: none;
+				background-color: #333;
+				color: #efefef;
+				height: 43px;
+				padding: 0px;
+				margin: 0px 0px 1px 0px;
+				-webkit-transition:all 0.25s ease-in-out;
+				-moz-transition:all 0.25s ease-in-out;
+				-o-transition:all 0.25s ease-in-out;
+				transition:all 0.25s ease-in-out;
+				cursor: pointer;
+				filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); 
+						filter: gray; 
+						-webkit-filter: grayscale(100%); 
+
+			}
+
+			.sticky li:hover{
+				margin-left: -115px;
+				/*-webkit-transform: translateX(-115px);
+				-moz-transform: translateX(-115px);
+				-o-transform: translateX(-115px);
+				-ms-transform: translateX(-115px);
+				transform:translateX(-115px);*/
+				/*background-color: #8e44ad;*/
+				filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+						-webkit-filter: grayscale(0%);
+			}
+
+			.sticky li img{
+				float: left;
+				margin: 5px 5px;
+				margin-right: 10px;
+
+			}
+
+			.sticky li p{
+				padding: 0px;
+				margin: 0px;
+				text-transform: uppercase;
+				line-height: 43px;
+
+			}
+
+			.sticky li a{
+				color:#dddddd;
+				text-decoration: none;
+			}
+
+			.dropdown-toggle div {
+				font-size: 15px !important;
+				/*height: 20px;*/
+			}
+			
+			#topMain li.active {
+				/*background-color:#fed52e;*/
+			}
+
+			#topNav ul.nav>li .difernte {
+				padding-left: 42px;
+				padding-right: 42px;
+				/* padding-left: 45px;
+				padding-right: 46px; */
+				/*font-weight: bold;*/
+			}
+
+			@media only screen and (max-width: 1224px) {
+				#topNav ul.nav>li .difernte {
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+			}
+
+			.mfp-arrow-right {
+			  margin-right: 50px;
+			}
+
+			.bandeiras_mobile {
+				display: none;			
+			}
+
+			@media only screen and (max-width: 540px) {
+				.bandeiras_mobile {
+					display: block;
+				}
+			}
+
+		</style>
+
+
+
+
+	
+      <style>
+        .cpd-form-card {
+          background: #ffffff;
+          padding: 28px;
+          border-radius: 4px;
+          border: 1px solid #dcdfe6;
+          font-family: inherit;
+          margin-top: 15px;
+          box-sizing: border-box;
+          color: #2c3e50;
+        }
+        .cpd-header-title {
+          color: #136357 !important;
+          font-size: 1.6rem !important;
+          font-weight: 700 !important;
+          margin-bottom: 6px !important;
+          margin-top: 0 !important;
+        }
+        .cpd-header-subtitle {
+          color: #8b1e2f;
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-top: 0;
+          margin-bottom: 8px;
+        }
+        .cpd-header-desc {
+          font-size: 0.9rem;
+          color: #5a6a85;
+          margin-bottom: 24px;
+          line-height: 1.45;
+          border-bottom: 1px solid #e9ecef;
+          padding-bottom: 14px;
+        }
+        .cpd-section-box {
+          margin-bottom: 26px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #edf2f7;
+        }
+        .cpd-section-box h3 {
+          color: #136357;
+          font-size: 1.08rem;
+          margin-top: 0;
+          margin-bottom: 16px;
+          padding-left: 10px;
+          border-left: 4px solid #8b1e2f;
+          font-weight: 700;
+        }
+        .cpd-grid-2 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+        .cpd-grid-full {
+          grid-column: span 2;
+        }
+        .cpd-field {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 12px;
+        }
+        .cpd-field label {
+          font-weight: 600;
+          font-size: 0.88rem;
+          color: #334155;
+          margin-bottom: 6px;
+        }
+        .cpd-field input[type="text"],
+        .cpd-field input[type="email"],
+        .cpd-field input[type="tel"],
+        .cpd-field input[type="number"],
+        .cpd-field input[type="file"],
+        .cpd-field select,
+        .cpd-field textarea {
+          padding: 9px 12px;
+          border: 1px solid #cbd5e1;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          color: #1e293b;
+          font-family: inherit;
+          box-sizing: border-box;
+          background-color: #ffffff;
+        }
+        .cpd-field input:focus,
+        .cpd-field select:focus,
+        .cpd-field textarea:focus {
+          border-color: #136357;
+          outline: none;
+          box-shadow: 0 0 0 2px rgba(19, 99, 87, 0.18);
+        }
+        .cpd-checkbox-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          margin-bottom: 12px;
+          font-size: 0.87rem;
+          color: #334155;
+          line-height: 1.45;
+          cursor: pointer;
+        }
+        .cpd-checkbox-row input {
+          margin-top: 3px;
+          accent-color: #136357;
+          min-width: 16px;
+          min-height: 16px;
+        }
+        .cpd-credit-preview {
+          background: #f8fafc;
+          border: 1px dashed #94a3b8;
+          border-radius: 4px;
+          padding: 12px;
+          font-size: 0.86rem;
+          color: #334155;
+          margin-top: 6px;
+          font-family: monospace;
+        }
+        .cpd-btn-submit {
+          background-color: #136357;
+          color: #ffffff;
+          border: none;
+          padding: 14px 28px;
+          font-size: 1rem;
+          font-weight: 700;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background 0.2s, opacity 0.2s;
+        }
+        .cpd-btn-submit:disabled {
+          background-color: #94a3b8;
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+        .cpd-btn-submit:hover:not(:disabled) {
+          background-color: #0e4b42;
+        }
+        @media (max-width: 768px) {
+          .cpd-grid-2 { grid-template-columns: 1fr; }
+          .cpd-grid-full { grid-column: span 1; }
+        }
+      </style>
+    </head>
+	
+
+	
+	
+	<script type="text/javascript">
+		function trunca_texto(div_texto, length) {
+			var texto = document.getElementById(div_texto).innerHTML;
+			var texto_final = texto.substring(0, Math.min(length,texto.length));
+			document.getElementById(div_texto).innerHTML = texto_final;
+			if(texto.length > length) document.getElementById(div_texto).innerHTML += " ...";
+		}
+
+		var SecaoId = '';
+	</script>
+
+	<script type="text/javascript">
+		var meses = new Array("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
+	</script>
+
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+			<div class="sticky-container hide_mobile">
+			<ul id="social-media" class="sticky">
+
+				<li>
+					<a href="https://www.facebook.com/museuhistoricodafmusp" target="_blank">
+					<img width="32" height="32" title="" alt="" src="/fmusp/assets/img/fb1.png" />
+					<p>Facebook</p></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/MuseuHistorico" target="_blank">
+					<img width="32" height="32" title="" alt="" src="/fmusp/assets/img/tw1.png" />
+					<p>Twitter</p></a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/museu_fmusp" target="_blank">
+					<img width="32" height="32" title="" alt="" src="/fmusp/assets/img/instagram.jpg" />
+					<p>Instagram</p></a>
+				</li>
+				<li>
+					<a href="https://www.youtube.com/channel/UC7r7kZ04Kp_hvalUn0m-TcQ" target="_blank">
+					<img width="32" height="32" title="" alt="" src="/fmusp/assets/img/youtube.jpg" />
+					<p>YouTube</p></a>
+				</li>
+			</ul>
+		</div>
+		
+	<style type="text/css">
+		.owl-item { width:228px; }
+		
+		.nav-tabs{
+			border-bottom: 1px solid #006848 !important;
+		}
+
+		div.tabs div.tab-content.transparent {
+			border: #006848 1px solid;
+			background: transparent;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;			
+			border-top: none;
+		}
+
+		div.tabs ul.nav-tabs li.active a {
+			border: #006848 1px solid !important;
+			background-color:rgba(0,0,0,0.03);
+			padding-top:15px;
+			border-bottom-color: #FFF !important;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px; 
+		}
+	</style>
+
+<body class="smoothscroll text-size" id="corpo_pagina">
+        <div id="wrapper">
+
+            <style>
+	[vw-access-button]{
+		right: -8px !important;
+		bottom: 80px !important;
+	}
+</style>
+
+<div vw class="enabled hidden-xs hidden-sm">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('#texto-grande').click(function(){   
+		curSize= parseInt($('.text-size').css('font-size')) + 1;
+		if(curSize<=20)
+		$('.text-size').css('font-size', curSize);
+	}); 
+	$('#texto-pequeno').click(function(){   
+		curSize= parseInt($('.text-size').css('font-size')) - 1;
+		if(curSize>=12)
+		$('.text-size').css('font-size', curSize);
+	});
+});
+
+function auto_contraste()
+{
+	if(document.getElementById('corpo_pagina').className == 'contrast-page text-size') 
+	{ 
+		document.getElementById('corpo_pagina').className = 'text-size';
+	}
+	else
+	{ 
+		document.getElementById('corpo_pagina').className = 'contrast-page text-size';
+	}
+}
+
+</script>	
+	<div id="header"><!-- class="sticky" for sticky menu -->
+
+		<!-- Top Bar -->
+		<header id="topBar">
+			
+			<!-- <div class="campanha-luto"></div> -->
+
+			<div class="container">
+
+				<!-- Logo -->
+				<a class="logo" href="/fmusp/portal">
+					<img src="/fmusp/assets/images/LOGO OFICIAL_fmusp_oficial_2017-04.svg" height="135" alt="" style="max-width: 230px; margin-top:25px; margin-bottom:25px; margin-left: -18px;" />
+				</a>
+<!-- 
+				<div class="pull-right fsize13 hide_mobile">
+
+					<div class="block text-right">
+						<a href="http://www.facebook.com/SescSC/" target="_blank" class="social fa fa-facebook"></a>
+						<a href="http://twitter.com/sesc_sc" target="_blank" class="social fa fa-twitter"></a>
+						<a href="http://instagram.com/sesc_sc#" target="_blank" class="social fa fa-instagram"></a>
+						<a href="http://www.youtube.com/sescsantacatarina" target="_blank" class="social fa fa-youtube"></a>
+					</div>
+
+				</div>
+-->
+				<div id="barMain" style="margin-right:15px; width:50%" class="hide_mobile">
+					<nav class="nav-second" style="float:right; margin-top:10px;">
+						<ul class="nav nav-pills nav-second">
+						<li><a style="padding: 5px 3px !important;" href="#" id="texto-grande" title="Aumentar Texto" alt="Aumentar Texto"  class="social"><i class="fa fa-font fa-lg"></i></a></li>
+							<li><a style="padding: 5px 3px !important;" href="#" id="texto-pequeno" title="Diminuir Texto" alt="Diminuir Texto" class="social"><i class="fa fa-font"></i></a></li>
+							<li><a style="padding: 5px 2px !important; margin-right: 15px !important;" href="#" id="auto-contraste" onclick="auto_contraste();" title="Auto-contraste" alt="Auto-contraste" class="social"><i class="fa fa-eye fa-lg"></i></a></li>
+							<li><a href="/fmusp/portal"><i class="fa fa-angle-right"></i> <b>HOME</b></a></li>
+							<!-- <li><a href="/fmusp/portal/contato.php"><i class="fa fa-angle-right"></i> CONTATO</a></li> -->
+							<!-- <li><a href="/intranet/login-ad"><i class="fa fa-angle-right"></i> INTRANET</a> </li> -->
+							<li><a href="https://intranet.fm.usp.br"><i class="fa fa-angle-right"></i> INTRANET</a> </li>
+						    <li><a href="/en" ><img src="/fmusp/assets/images/ico-flag-usa.png" alt="" /></a></li>
+						    <!-- <li><a href="/es" ><img src="/fmusp/assets/images/ico-flag-spa.png" alt="" /></a></li> -->
+
+							<!-- Code provided by Google
+							<div id="google_translate_element" style="display: none;"></div>
+							<script type="text/javascript">
+							  function googleTranslateElementInit() {
+								new google.translate.TranslateElement({pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+							  }
+							</script>
+							<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+
+ -->
+
+						</ul>
+					</nav>
+
+					<!-- Search -->
+					<script>
+					var onsubmit_search = function() {
+						try{
+							var url = '/fmusp/portal/buscar-por/';
+							url += document.getElementById('buscaPalavra').value.replace(/\s+/g, '-');
+							url += '/' + document.getElementById('conexao_hotsite').value;
+							url += '/' + document.getElementById('dominio_site').value;
+
+							//alert(url);
+
+							window.location = url;
+							return false;
+						}catch(err) {
+							alert(err.message);						
+						}
+					};
+					</script>
+					<form id="busca1" class="search" method="get" action="/fmusp/portal/buscar-por/" onsubmit="return onsubmit_search();">
+												<input type="hidden" id="conexao_hotsite" name="conexao_hotsite" value=11>
+						<input type="hidden" id="dominio_site" name="dominio_site" value=museu>
+												<input type="text" class="form-control" id="buscaPalavra" name="palavra" value="" placeholder="O que você procura?">
+						<button class="fa fa-search"></button>
+					</form>
+					<!-- /Search -->
+
+					<nav class="nav-second" style="float:right;">
+						<ul class="nav nav-pills nav-second">
+							<li><a href="/fmusp/contato/imprensa"><i class="fa fa-leanpub"></i> <b>Imprensa</b></a></li>
+							<li><a href="/fmusp/institucional/editais"><i class="fa fa-university"></i> <b>Editais</b></a></li>
+							<li><a href="/fmusp/home/ao-vivo?secao_id=104"><i class="fa fa-video-camera"></i> <b>AO VIVO</b></a></li>
+						</ul>
+					</nav>
+				</div>
+
+
+			</div><!-- /.container -->
+		</header>
+		<!-- /Top Bar -->
+
+
+		<!-- Top Nav -->
+		<header id="topNav" style="background-color: #fafafa;">
+			<div class="container">
+
+
+				<div class="bandeiras_mobile" style="float:left;">
+					<ul style="list-style: none;">
+						<li style="float: left; padding:10px;"><a href="/en" ><img src="/fmusp/assets/images/ico-flag-usa.png" alt="" /></a></li>
+						<li style="float: left; padding:10px;"><a href="/es" ><img src="/fmusp/assets/images/ico-flag-spa.png" alt="" /></a></li>
+						<li style="float: left; padding-top:13px; padding-left:10px; padding-bottom:10px;"><a href="/intranet/login-ad"><i class="fa fa-users"></i> INTRANET</a> </li>
+						<li style="float: left; padding-top:13px; padding-left:10px; padding-bottom:10px;"><a href="/fmusp/home/ao-vivo?secao_id=104"><i class="fa fa-video-camera"></i> AO VIVO</a> </li>
+					</ul>
+				</div>
+
+				<!-- Mobile Menu Button -->
+				<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+					<i class="fa fa-bars"></i>
+				</button>
+
+
+
+				<!-- Top Nav -->
+				<div class="navbar-collapse nav-main-collapse collapse">
+					<nav class="nav-main">
+
+						<ul id="topMain" class="nav nav-pills nav-main">
+
+							<li class="dropdown active2">
+								<a class="dropdown-toggle difernte" href="#"><div>Institucional</div> <!-- <span>write us</span> --></a>
+								<ul class="dropdown-menu">
+
+									<li>
+<a class="dropdown-toggle" =""><i class="fa fa-angle-right"></i> A FMUSP</a>
+<ul class="dropdown-menu">
+<li><a class="has-submenu" href="/fmusp/a-fmusp/a-fmusp">A FMUSP</a>
+<li><a class="has-submenu" href="/fmusp/a-fmusp/historico">Histórico</a>
+<li><a class="has-submenu" href="/fmusp/a-fmusp/missao-visao-e-valores">Missão, Visão e Valores</a>
+<li><a class="has-submenu" href="/fmusp/a-fmusp/organograma">Organograma</a>
+<li><a class="has-submenu" href="http://fm.usp.br/fmusp/portal/sistema-academico-de-saude-fmusp-hc">Sistema Acadêmico de Saúde</a>
+</li></ul>
+</li>
+<li>
+<a class="dropdown-toggle" =""><i class="fa fa-angle-right"></i> A Diretoria</a>
+<ul class="dropdown-menu">
+<li><a class="has-submenu" href="/fmusp/institucional/a-diretoria">Diretoria</a>
+<li><a class="has-submenu" href="/fmusp/a-diretoria/relatorios">Relatórios</a>
+</li></ul>
+</li>
+<li>
+<a class="has-indicator" href="https://www.fm.usp.br/cedit"><i class="fa fa-angle-right"></i> Comissão Editorial</a></li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/corpo-docente"><i class="fa fa-angle-right"></i> Corpo Docente</a></li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/departamentos"><i class="fa fa-angle-right"></i> Departamentos</a></li>
+<li>
+<a class="dropdown-toggle" =""><i class="fa fa-angle-right"></i> Divisão Acadêmica</a>
+<ul class="dropdown-menu">
+<li><a class="has-submenu" target="_blank" href="https://www.fm.usp.br/dvacad">A Divisão Acadêmica</a>
+<li><a class="dropdown-toggle" href="https://fm.usp.br/fmusp/departamentos/centros-interdepartamentais">Centros Interdepartamentais</a>
+<ul class="dropdown-menu">
+<li><a target="_blank" href="https://fm.usp.br/fmusp/centros-interdepartamentais/centro-de-ciencias-forenses">Centro de Ciências Forenses</a></li>
+<li><a target="_blank" href="https://www.fm.usp.br/cedem/portal/">Centro de Desenvolvimento de Educação Médica - CEDEM</a></li>
+<li><a target="_blank" href="https://www.fm.usp.br/fmusp/centro-de-desenvolvimento-infantil/home">Centro de Desenvolvimento Infantil</a></li>
+<li><a target="_blank" href="https://www.fm.usp.br/fmusp/centro-de-medicina-do-estilo-de-vida/home">Centro de Medicina do Estilo de Vida</a></li>
+<li><a target="_blank" href="https://fm.usp.br/cseb/portal/">Centro de Saúde Escola Butantã</a></li>
+<li><a target="_blank" href="https://www.fm.usp.br/fmusp/centros-interdepartamentais/centro-integrado-de-doencas-geneticas-e-raras-cigen">Centro Integrado de Doenças Genéticas e Raras (CIGEN)</a></li>
+<li><a target="_blank" href="https://fm.usp.br/fmusp/centros-interdepartamentais/centro-integrado-de-neuro-ortopedia">Centro Integrado de Neuro-Ortopedia</a></li>
+<li><a target="_blank" href="https://www.fm.usp.br/imt/portal/">Instituto de Medicina Tropical</a></li>
+<li><a target="_blank" href="https://www.fm.usp.br/dvacad/centros-interdepartamentais/centro-de-inteligencia-artificial">Centro de Inteligência Artificial</a></li>
+</ul></li>
+</li></ul>
+</li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/editais"><i class="fa fa-angle-right"></i> Editais</a></li>
+<li>
+<a class="dropdown-toggle" =""><i class="fa fa-angle-right"></i> Humanização</a>
+<ul class="dropdown-menu">
+<li><a class="has-submenu" target="_blank" href="https://fm.usp.br/humanizacao">A Humanização</a>
+<li><a class="has-submenu" href="/fmusp/humanizacao/codigo-de-conduta-etica">Código de Conduta Ética</a>
+</li></ul>
+</li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/licitacoes"><i class="fa fa-angle-right"></i> Licitações</a></li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/noticias"><i class="fa fa-angle-right"></i> Notícias</a></li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/eventos"><i class="fa fa-angle-right"></i> Eventos</a></li>
+<li>
+<a class="has-indicator" href="/fmusp/institucional/por-dentro-das-obras"><i class="fa fa-angle-right"></i> Por dentro das Obras</a></li>
+								
+<!-- 
+									<li><a href="#"><i class="fa fa-angle-right"></i> Missão, Visão e Valores</a></li>
+									<li><a href="#"><i class="fa fa-angle-right"></i> Histórico</a></li>
+									<li><a href="#"><i class="fa fa-angle-right"></i> Organograma</a></li>
+									<li><a href="#"><i class="fa fa-angle-right"></i> Sistema Acadêmico de Saúde</a></li>
+									<li><a href="#"><i class="fa fa-angle-right"></i> Código de Conduta Ética FMUSP</a></li>
+									<li>
+										<a class="dropdown-toggle" href="#"><i class="fa fa-angle-right"></i> Transparência</a>
+										<ul class="dropdown-menu">
+											<li><a href="#">Licitações</a></li>
+											<li><a href="#">Editais e Concursos</a></li>
+										</ul>
+
+
+									</li>
+ -->
+								</ul>
+							</li>
+							<!--<li class="dropdown active3">
+								<a class="dropdown-toggle difernte" href="#"><div>Departamentos</div></a>
+								<ul class="dropdown-menu">
+									<script type="text/javascript">
+									var nivel = '2';
+									</script>
+																		<script type="text/javascript">
+									if(nivel == '1') {
+									  document.write('</ul></li>');
+									} else {
+									  document.write('</li>');
+									}
+									</script>									
+								</ul>
+							</li>-->
+							<li class="dropdown active4">
+								<a class="dropdown-toggle difernte" href="#"><div>Ensino</div> <!-- <span>write us</span> --></a>
+								<ul class="dropdown-menu">
+									<li><a target="_blank" href="http://fm.usp.br/graduacao"><i class="fa fa-angle-right"></i> Graduação</a></li>
+<li><a href="/fmusp/ensino/iniciacao-cientifica"><i class="fa fa-angle-right"></i> Iniciação Científica</a></li>
+<li><a href="https://fm.usp.br/fmusp/home/espaco-do-calouro"><i class="fa fa-angle-right"></i> Espaço do Calouro</a></li>
+<li><a target="_blank" href="http://fm.usp.br/posgrad"><i class="fa fa-angle-right"></i> Pós-graduação</a></li>
+<li><a target="_blank" href="http://fm.usp.br/rede-apoio"><i class="fa fa-angle-right"></i> Rede de Apoio ao Estudante</a></li>
+<li><a target="_blank" href="http://fm.usp.br/coreme"><i class="fa fa-angle-right"></i> Residência Médica</a></li>
+<li><a href="/fmusp/ensino/entidades-estudantis"><i class="fa fa-angle-right"></i> Entidades Estudantis</a></li>
+<li><a target="_blank" href="http://fm.usp.br/labhab"><i class="fa fa-angle-right"></i> Laboratório de Habilidades e Simulação - LabHab</a></li>
+<li><a target="_blank" href="http://www.fm.usp.br/biblioteca"><i class="fa fa-angle-right"></i> Biblioteca</a></li>
+<li><a href="/fmusp/ensino/revista-de-medicina"><i class="fa fa-angle-right"></i> Revista de Medicina</a></li>
+								</ul>
+							</li>
+							<li class="dropdown active5">
+								<a class="dropdown-toggle difernte" href="#"><div>Pesquisa</div> <!-- <span>write us</span> --></a>
+								<ul class="dropdown-menu">
+									<li><a target="_blank" href="http://www.fm.usp.br/cpesq"><i class="fa fa-angle-right"></i> Pesquisa</a></li><li><a href="/fmusp/pesquisa/lims"><i class="fa fa-angle-right"></i> LIMs</a></li><li><a href="/fmusp/pesquisa/revista-clinics"><i class="fa fa-angle-right"></i> Revista Clinics</a></li><li><a href="/fmusp/pesquisa/estudos-e-pesquisas"><i class="fa fa-angle-right"></i> Estudos e pesquisas</a></li>								</ul>
+							</li>
+							<li class="dropdown active6">
+								<a class="dropdown-toggle difernte" href="#"><div>Internacional</div> <!-- <span>write us</span> --></a>
+								<ul class="dropdown-menu">
+									<li><a href="/fmusp/internacional/internacional"><i class="fa fa-angle-right"></i> Internacional</a></li>
+									<script type="text/javascript">
+									var nivel = '2';
+									</script>
+									<script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("72" != "76" && "72" != "114" && "72" != "313"){
+	document.write("<a = style=display:none><i class=fa fa-angle-right></i> Internacional</a>");
+}else{
+	document.write("<a =><i class=fa fa-angle-right></i> Internacional</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/internacional/internacional"><i class="fa fa-angle-right"></i> Internacional</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/sobre-a-crint/indicadores"><i class="fa fa-angle-right"></i> Indicadores</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/sobre-a-crint/comissao-de-relacoes-internacionais"><i class="fa fa-angle-right"></i> Comissão de Relações Internacionais</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/internacional/escritorio-internacional"><i class="fa fa-angle-right"></i> Escritório Internacional</a></li><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("80" != "76" && "80" != "114" && "80" != "313"){
+	document.write("<a = style=display:none><i class=fa fa-angle-right></i> Mobilidade FMUSP</a>");
+}else{
+	document.write("<a =><i class=fa fa-angle-right></i> Mobilidade FMUSP</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/mobilidade-fmusp/graduacao"><i class="fa fa-angle-right"></i> Graduação</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/estudantes-fmusp/pos-graduacao11"><i class="fa fa-angle-right"></i> Pós Graduação</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/estudantes-fmusp/pesquisa1"><i class="fa fa-angle-right"></i> Pesquisa</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/mobilidade-fmusp/residencia-medica"><i class="fa fa-angle-right"></i> Residência Médica</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/estudantes-fmusp/ecfmg"><i class="fa fa-angle-right"></i> ECFMG</a></li><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("68" != "76" && "68" != "114" && "68" != "313"){
+	document.write("<a href=/fmusp/internacional/meu-intercambio style=display:none><i class=fa fa-angle-right></i> Meu Intercâmbio</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/meu-intercambio><i class=fa fa-angle-right></i> Meu Intercâmbio</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("84" != "76" && "84" != "114" && "84" != "313"){
+	document.write("<a href=/fmusp/internacional/alunos-estrangeiros style=display:none><i class=fa fa-angle-right></i> Alunos Estrangeiros</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/alunos-estrangeiros><i class=fa fa-angle-right></i> Alunos Estrangeiros</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("73" != "76" && "73" != "114" && "73" != "313"){
+	document.write("<a href=/fmusp/internacional/winter-schools style=display:none><i class=fa fa-angle-right></i> Winter Schools</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/winter-schools><i class=fa fa-angle-right></i> Winter Schools</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("74" != "76" && "74" != "114" && "74" != "313"){
+	document.write("<a href=/fmusp/internacional/professor-visitante style=display:none><i class=fa fa-angle-right></i> Professor Visitante</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/professor-visitante><i class=fa fa-angle-right></i> Professor Visitante</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("75" != "76" && "75" != "114" && "75" != "313"){
+	document.write("<a href=/fmusp/internacional/convenios style=display:none><i class=fa fa-angle-right></i> Convênios</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/convenios><i class=fa fa-angle-right></i> Convênios</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("305" != "76" && "305" != "114" && "305" != "313"){
+	document.write("<a = style=display:none><i class=fa fa-angle-right></i> Redes de internacionalização</a>");
+}else{
+	document.write("<a =><i class=fa fa-angle-right></i> Redes de internacionalização</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/redes-de-internacionalizacao/codem-lp"><i class="fa fa-angle-right"></i> CODEM-LP</a></li><script>
+if(nivel == "3") {
+   document.write("<ul class=dropdown-menu>");
+   nivel = "1";
+}
+</script>
+
+<li><a href="/fmusp/redes-de-internacionalizacao/aahci"><i class="fa fa-angle-right"></i> AAHCI</a></li><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("258" != "76" && "258" != "114" && "258" != "313"){
+	document.write("<a href=/fmusp/internacional/duvidas-frequentes style=display:none><i class=fa fa-angle-right></i> Dúvidas Frequentes</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/duvidas-frequentes><i class=fa fa-angle-right></i> Dúvidas Frequentes</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("313" != "76" && "313" != "114" && "313" != "313"){
+	document.write("<a href=/fmusp/internacional/editais-internacionais style=display:none><i class=fa fa-angle-right></i> Editais Internacionais</a>");
+}else{
+	document.write("<a href=/fmusp/internacional/editais-internacionais><i class=fa fa-angle-right></i> Editais Internacionais</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script><script>
+if(nivel == "3") {
+   document.write("</li>");
+   nivel = "2";
+}
+if(nivel == "1") {
+   document.write("</ul></li>");
+   nivel = "2";
+}
+if(nivel == "2") document.write("<li>");
+
+if ("76" != "76" && "76" != "114" && "76" != "313"){
+	document.write("<a href=https://www.fm.usp.br/fmusp/internacional/escritorio-internacional style=display:none><i class=fa fa-angle-right></i> Contatos</a>");
+}else{
+	document.write("<a href=https://www.fm.usp.br/fmusp/internacional/escritorio-internacional><i class=fa fa-angle-right></i> Contatos</a>");
+}
+</script>
+
+
+<script>
+nivel = "3";
+</script>									<script type="text/javascript">
+									if(nivel == '1') {
+									  document.write('</ul></li>');
+									} else {
+									  document.write('</li>');
+									}
+									</script>
+								</ul>
+							</li>
+							<li class="dropdown active7">
+								<a class="dropdown-toggle difernte" href="#"><div>Cultura e Extensão</div> <!-- <span>write us</span> --></a>
+								<ul class="dropdown-menu">
+									<li><a href="http://www.fm.usp.br/ccex/"><i class="fa fa-angle-right"></i> Cultura e Extensão</a></li><li><a target="_blank" href="http://fm.usp.br/museu"><i class="fa fa-angle-right"></i> Museu Histórico</a></li>								</ul>
+							</li>
+							<li class="dropdown active2">
+								<a class="dropdown-toggle difernte" href="#"><div>Inclusão e Pertencimento</div></a>
+								<ul class="dropdown-menu">
+									<li><a href="/fmusp/portal/inclusao-e-pertencimento"><i class="fa fa-angle-right"></i> Inclusão e Pertencimento</a></li>
+																	</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<!-- /Top Nav -->
+
+			</div><!-- /.container -->
+		</header>
+		<!-- /Top Nav -->
+
+	</div>
+
+
+
+
+	<!-- modal trigger -->
+	<a href="#" id="modal-click" data-toggle="modal" data-target="#myModal"></a>
+
+	<!-- modal dialog -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header"><!-- modal header -->
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Atenção</h4>
+				</div><!-- /modal header -->
+
+				<!-- modal body -->
+				<div class="modal-body" id="modal-body">
+					Modal Body
+				</div>
+				<!-- /modal body -->
+
+				<div class="modal-footer"><!-- modal footer -->
+					<button class="btn btn-default" data-dismiss="modal">Close</button> <!-- <button class="btn btn-primary">Save changes</button> -->
+				</div><!-- /modal footer -->
+
+			</div>
+		</div>
+	</div>
+
+
+				<section class="nopadding-bottom">
+
+				<div class="container margin-top60">
+
+					<div class="row">
+
+						<div class="col-md-3">
+						<div id="sidebar-nav"><div class="panel list-group"><a href="/museu" class="list-group-item active">Home</a><a ="" class="list-group-item menu_link"><i class="glyphicon glyphicon-chevron-down float-right" style="color: #006848 !important;"></i> O Museu</a>
+<div class="sublinks">
+<a href="/museu/o-museu/missao-visao-valores" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Missao ❍ Visao ❍ Valores</a>
+<a href="/museu/o-museu/historico" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Histórico</a>
+<a href="/museu/o-museu/equipe" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Equipe</a>
+<a href="/museu/o-museu/parcerias" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Parcerias</a>
+</div>
+<a ="" class="list-group-item menu_link"><i class="glyphicon glyphicon-chevron-down float-right" style="color: #006848 !important;"></i> Visitas</a>
+<div class="sublinks">
+<a href="/museu/visitas/educativo" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Educativo</a>
+<a href="/museu/visitas/agendamento-de-grupos" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Agendamento de grupos</a>
+<a href="/museu/visitas/acessibilidade" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Acessibilidade</a>
+</div>
+<a href="/museu/portal/exposicoes" class="list-group-item"><i class="menu_pai" style="color: #006848 !important;"></i> Exposições</a><a ="" class="list-group-item menu_link"><i class="glyphicon glyphicon-chevron-down float-right" style="color: #006848 !important;"></i> Acervo e Pesquisa</a>
+<div class="sublinks">
+<a href="/museu/acervo-e-pesquisa/guia-do-acervo" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Guia do acervo</a>
+<a href="/museu/acervo-e-pesquisa/agendamento-de-pesquisa-e-protocolos-de-bioseguranca" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Acesso e Reprodução</a>
+<a href="/museu/acervo-e-pesquisa/sobre-o-acervo" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Sobre o acervo</a>
+<a href="/museu/acervo/doacao-de-acervo" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Doação de acervo</a>
+</div>
+<a ="" class="list-group-item menu_link"><i class="glyphicon glyphicon-chevron-down float-right" style="color: #006848 !important;"></i> Conservação e Restauro</a>
+<div class="sublinks">
+<a href="/museu/conservacao-e-restauro/conservacao" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Conservação</a>
+<a href="/museu/conservacao-e-restauro/bula-papal" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Bula Papal</a>
+<a href="/museu/conservacao-e-restauro/desenho-do-prof-alfonso-bovero" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Desenho do Prof. Alfonso Bovero</a>
+<a href="/museu/conservacao-e-restauro/retratos-dos-diretores-e-professores-da-fmusp" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Retratos dos Diretores e Professores da FMUSP</a>
+<a href="/museu/conservacao-e-restauro/anjo-tocheiro" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Anjo Tocheiro</a>
+<a href="/museu/conservacao-e-restauro/colecao-ceroplastica" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Coleção Ceroplástica</a>
+</div>
+<a href="/museu/portal/livros-para-download" class="list-group-item"><i class="menu_pai" style="color: #006848 !important;"></i> Livros para Download</a><a ="" class="list-group-item menu_link"><i class="glyphicon glyphicon-chevron-down float-right" style="color: #006848 !important;"></i> Redes Sociais</a>
+<div class="sublinks">
+<a target="_blank" href="https://www.facebook.com/museuhistoricodafmusp" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Facebook</a>
+<a target="_blank" href="https://www.instagram.com/museu_fmusp" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Instagram</a>
+<a target="_blank" href="https://twitter.com/MuseuHistorico" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Twitter</a>
+<a target="_blank" href="https://www.youtube.com/channel/UC7r7kZ04Kp_hvalUn0m-TcQ" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> YouTube</a>
+</div>
+<a href="/museu/portal/museu-virtual-da-fmusp-em-tempos-de-pandemia" class="list-group-item"><i class="menu_pai" style="color: #006848 !important;"></i> Museu Virtual da FMUSP em tempos de pandemia</a><a ="" class="list-group-item menu_link"><i class="glyphicon glyphicon-chevron-down float-right" style="color: #006848 !important;"></i> I Congresso Paulista de História da Medicina e das Práticas de Saúde </a>
+<div class="sublinks">
+<a href="/museu/i-congresso-paulista-de-historia-da-medicina-e-das-praticas-de-saude/conferencias" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Conferências</a>
+<a href="/museu/i-congresso-paulista-de-historia-da-medicina-e-das-praticas-de-saude/comissao-organizadora" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Comissão organizadora</a>
+<a href="/museu/i-congresso-paulista-de-historia-da-medicina-e-das-praticas-de-saude/programacao-do-congresso" class="list-group-item small"><i class="glyphicon glyphicon-chevron-right" style="color: #006848 !important;"></i> Programação do Congresso</a>
+</div>
+<a href="/museu/portal/fmusp-110-anos-historia-e-memoria" class="list-group-item"><i class="menu_pai" style="color: #006848 !important;"></i> FMUSP 110 anos: História e Memória</a><a href="/museu/portal/eventos" class="list-group-item"><i class="menu_pai" style="color: #006848 !important;"></i> Eventos</a></div></div>						
+						<!-- BANNERS DESTAQUE -->
+						<div class="row margin-top40"><!-- mixed: images and videos -->
+							
+							
+							<!-- <div class="col-md-8 col-sm-3 col-xs-6 margin-left35 margin-right35 mobile-nomargin">
+								<div class="box-content thumbnail text-center">
+									<a href="assets/images/demo/people/12.jpg" class="item-image lightbox" data-plugin-options='{"type":"image"}'>
+										<img class="img-responsive" src="http://placehold.it/198x105" alt="" />
+									</a>
+								</div>
+							</div> -->
+
+						</div>
+						<!-- /BANNERS DESTAQUE -->
+
+						</div>							
+						<div class="col-md-9">
+							
+							<!-- <div>
+								<img src="/museu/portal/images/topo_posgrad.jpg" class="img-responsive">
+							</div> -->
+
+							<!-- REVOLUTION SLIDER -->
+							<div class="slider fullwidthbanner-container roundedcorners">
+								<div class="fullwidthbanner">
+									<ul class="hide">
+
+										<li data-transition="fade" data-slotamount="14"  data-masterspeed="300" data-delay="10000">
+<img src="/museu/Manager/show_image.php?show_arquivo=institucional&show_campo=institucional_imagem_gr&show_chave=Institucional_id=55" data-lazyload="/museu/Manager/show_image.php?show_arquivo=institucional&show_campo=institucional_imagem_gr&show_chave=Institucional_id=55" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" />
+</li>										<!-- SLIDE  -->
+										<!-- <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-saveperformance="off" >
+											<img src="assets/images/1x1.png" data-lazyload="/museu/portal/images/posgrad-slider.jpg" alt="" data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat" />
+										</li> -->
+
+									</ul>
+									<div class="tp-bannertimer"></div>
+								</div>
+							</div>
+							<!-- /REVOLUTION SLIDER -->
+							
+							<!-- CONTEUDO DESTAQUE -->
+							<div class="col-md-12 margin-top40 nopadding">
+								
+								<h2>Venha conhecer o Museu Histórico da FMUSP</h2>
+<br><br><div><div>
+   <p align="justify">Quer conhecer a nossa atual exposição "A pele enferma: Augusto Esteves e seu museu de cera"?<br></p><p>O Museu Histórico da FMUSP está aberto de segunda a sexta-feira das 08h00 às 17h00. A entrada é gratuita e o agendamento prévio só é necessário para grupos formados por mais de 15 pessoas.&nbsp;<br></p><p><b>Endereço</b>: Avenida Dr. Arnaldo, 455, Cerqueira César - São Paulo (Em frente ao Metrô Clínicas - Linha 2 - Verde).<br></p><p><b>Telefone</b>: (11) 3061-7249<br></p><p><b>E-mail</b>: museu.historico@fm.usp.br</p>
+</div></div><br>								
+							</div>
+							<!-- /CONTEUDO DESTAQUE -->
+
+							<!-- EVENTOS -->
+							<div class="col-md-12 nopadding">
+								<!-- <h3 style="color:#004F71;"><b>Museu Virtual</b></h3> -->
+
+								<!-- carousel -->
+								<div id="noticias_home" class="owl-carousel controlls-over" data-plugin-options='{"singleItem": false, "items": 3, "navigation": true, "pagination": false}'>
+									<!-- -->
+									<!-- 
+									<div class="col-sm-3 col-md-3">
+										<div class="box-content  text-center" style="margin-bottom:0; padding-bottom:0;">
+											<a href="#" class="item-image">
+												<img class="img-responsive"  src="/fmusp/assets/images/not1.jpg" alt="" />
+											</a>
+										</div>
+										<br>
+										<a href="#"><script>document.write('<p>' + '<b>12/09/2017</b> - Desafios de centros acadêmicos de saúde são tema de simpósio no HCFMUSP</p>');</script></a>
+									</div>
+									 -->
+								</div><!-- /carousel -->
+
+								<!--<div align="right" class="margin-top10"><a href="/museu/destaques-home/eventos"><b>Mais Eventos <i class="fa fa-angle-double-right"></i></b></a></div>-->
+							</div>
+							<!-- /EVENTOS -->
+
+						</div>
+	
+
+					</div>
+			</section>
+
+
+
+            <!-- /CONTENT -->
+
+            
+			<div class="container margin-bottom20">
+
+				<div class="row"><!-- mixed: images and videos -->
+					
+					
+					<!-- <div class="col-sm-2 col-md-2">
+						<div class="box-content thumbnail text-center">
+							<a href="assets/images/demo/people/12.jpg" class="item-image lightbox" data-plugin-options='{"type":"image"}'>
+								<img class="img-responsive" src="/ccex/portal/images/banner_terceira_idade.jpg" alt="" />
+							</a>
+						</div>
+					</div>-->
+
+				</div>
+
+			</div>
+
+
+			<!-- FOOTER -->
+			<footer id="footer"> <!-- #006848 -->
+
+				<hr />
+
+				<div class="copyright">
+					<div class="container text-center fsize14">
+						<b>Museu Histórico “Prof. Carlos da Silva Lacaz”</b>
+						<br>						
+						Prédio da FMUSP • Av. Dr. Arnaldo, 455 • 4º andar • sala 4306<br>
+						Cerqueira César • São Paulo • Brasil • 01246 903<br>
+						<!-- Horário de atendimento: 2ª a 6ª feira das 8h às 17h<br>-->
+						<!-- Fax: (0xx) 3061-7454<br> -->
+						<a href="mailto:museu.historico@fm.usp.br" style="color:#00C7B1;">museu.historico@fm.usp.br</a>
+						<br>
+						55 11 3061 7249</h2>
+					</div>
+				</div>
+			</footer>
+			<!-- /FOOTER -->
+
+			<!-- FOOTER -->
+			<footer id="footer" style="background-color: #00AAAB !important;"> <!-- #006848 -->
+				<div class="container">
+
+					<div class="row">
+
+						<div class="spaced col-md-2">
+							<h4 class="submenu-click"><b>Contatos</b></h4>
+							<ul class="list-unstyled nobordered submenu-footer">
+								<li><a class="block" href="https://www.fm.usp.br/ouvidoria"> Ouvidoria</a></li><li><a class="block" href="/fmusp/contato/imprensa"> Imprensa</a></li><li><a class="block" href="/fmusp/contato/localizacao"> Localização</a></li><li><a class="block" href="/fmusp/portal/mapa.php"> Mapa do Site</a></li>								<!-- <li><a class="block" href="#"><i class="fa fa-angle-right"></i> Perguntas Frequentes</a></li> -->
+							</ul>
+	
+						</div>
+
+						<div class="spaced col-md-2">
+							<h4 class="submenu-click"><b>Informações</b></h4>
+							<ul class="list-unstyled nobordered submenu-footer">
+								<li><a class="block" href="/fmusp/informacoes/transparencia"> Transparência</a></li>	
+								<li><a class="block" href="/fmusp/institucional/licitacoes"> Licitações</a></li>							
+							</ul>
+						</div>
+
+						<div class="spaced col-md-2">
+							<h4 class="submenu-click"><b>Serviços</b></h4>
+							<ul class="list-unstyled nobordered submenu-footer">
+								<li><a class="block" target="_blank" href="http://www.fm.usp.br/pgrss"> Comissão de Resíduos</a></li><li><a class="block" href="/fmusp/servicos/e-mail-fm"> E-mail fm</a></li><li><a class="block" target="_blank" href="http://fm.usp.br/sustentabilidade"> Sustentabilidade</a></li><li><a class="block" target="_blank" href="http://fm.usp.br/cipa"> CIPA FMUSP</a></li>							</ul>
+						</div>
+
+
+						<div class="spaced col-md-2">
+							<h4 class="submenu-click"><b>Apoiadores</b></h4>
+							<ul class="list-unstyled nobordered submenu-footer">
+								<li><a class="block" href="/fmusp/apoiadores/aaafmusp"> AAAFMUSP</a></li><li><a class="block" href="/fmusp/apoiadores/fundacoes"> Fundações</a></li>							</ul>
+						</div>
+
+
+						<!-- col #2 -->
+						<div class="spaced col-md-2">
+							<h4 class="submenu-click"><b>Contribuições</b></h4>
+							<ul class="list-unstyled nobordered submenu-footer">
+								<li><a class="block" href="/fmusp/contribuicoes/endowment"> Endowment</a></li>							</ul>
+						</div>
+						<!-- /col #3 -->
+
+						<!-- col #4 -->
+						<div class="spaced col-md-2 col-sm-4">
+									<h4><b>Mídias Sociais</b></h4>
+
+									
+
+									<p class="block" style="text-align: start !important;"><!-- social -->
+										<a href="https://www.facebook.com/FMUSPOficial/" target="blank" class="social fa fa-facebook"></a>
+										<!-- <a href="https://twitter.com/FMUSPoficial" target="blank" class="social fa fa-twitter"></a> -->
+										<a href="https://www.instagram.com/fmusp_oficial/" target="blank" class="social fa fa-instagram"></a>
+										<a href="https://www.youtube.com/channel/UCmiLXu0Pn3noQGpO2Pvdxuw" target="blank" class="social fa fa-youtube-play"></a>
+										<a href="https://www.linkedin.com/school/fmuspoficial/" target="_blank" class="social fa fa-linkedin"></a>
+										<!-- <a href="#" class="social fa fa-google-plus"></a>
+										<a href="#" class="social fa fa-linkedin"></a> -->
+									</p><!-- /social -->
+<!-- 
+									<ul class="list-unstyled nobordered">
+										<li><a class="block" href="#"><i class="fa fa-angle-right"></i> Licitações</a></li>
+										<li><a class="block" href="#"><i class="fa fa-angle-right"></i> Editais e Concursos</a></li>
+									</ul>
+
+							<h4 class="margin-top40">Assine a nossa Newsletter</h4>
+							<form id="newsletterSubscribe" method="post" action="php/newsletter.php" class="input-group">
+								<input required type="email" class="form-control" name="newsletter_email" id="newsletter_email" value="" placeholder="E-mail">
+								<span class="input-group-btn">
+									<button class="btn btn-primary">Enviar</button>
+								</span>
+							</form>
+ -->
+
+						</div>
+						<!-- /col #4 -->
+
+					</div>
+
+				</div>
+
+				<hr />
+
+				<div class="copyright">
+					<div class="container text-center fsize12">
+						Produzido por <a href="http://www.dna.com.br" target="_blank" title="bootstrap themes &amp; templates" class="copyright">DNA<i>net</i></a> &bull; Todos direitos reservados desde 1999 &copy; FMUSP &bull;
+						<!-- <a href="#" class="fsize14" style="color: #00C7B1 !important;">Direitos Autorais</a> &bull;   -->
+						<!-- <a href="#" class="fsize11">Terms of Service</a> &bull;  -->
+						<a href="/fmusp/home/acessibilidade" class="fsize14" style="color: #00C7B1 !important;">Acessibilidade</a>
+						<br>Av. Dr. Arnaldo, 455 - Cerqueira César &bull; CEP: 01246903 &bull; São Paulo - SP - Brasil <!-- Telefone: +55 11 3061-7000 -->
+					</div>
+				</div>
+			</footer>
+			<!-- /FOOTER -->
+
+			<a href="#" id="toTop"></a>
+
+		</div><!-- /#wrapper -->
+
+		<!-- JAVASCRIPT FILES -->	
+		<!-- REVOLUTION SLIDER -->
+		<script type="text/javascript" src="/fmusp/assets/plugins/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/js/revolution_slider.js"></script>
+			
+		<script type="text/javascript" src="/fmusp/assets/plugins/jquery.isotope.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/plugins/masonry.js"></script>
+
+		<script type="text/javascript" src="/fmusp/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/plugins/knob/js/jquery.knob.js"></script>
+		<script type="text/javascript" src="/fmusp/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+
+		<!-- LAYER SLIDER -->
+		<script type="text/javascript" src="/fmusp/assets/plugins/layerslider/js/layerslider_pack.js"></script>
+
+		<!-- SLICK -->
+		<script type="text/javascript" src="/fmusp/assets/plugins/slick/slick.min.js"></script>
+
+		<script type="text/javascript" src="/fmusp/assets/js/scripts.js"></script>
+		<!-- <script type="text/javascript" src="/fmusp/assets/plugins/styleswitcher/styleswitcher.js">/** REMOVE ON PRODUCTION **/</script> -->
+
+		
+		<!-- Flag click handler -->
+		<script type="text/javascript">
+
+			$('.translation-links a').click(function() {
+			  var lang = $(this).data('lang');
+			  var $frame = $('.goog-te-menu-frame:first');
+			  if (!$frame.size()) {
+				alert("Error: Could not find Google translate frame.");
+				return false;
+			  }
+			  $frame.contents().find('.goog-te-menu2-item span.text:contains('+lang+')').get(0).click();
+			  return false;
+			});
+
+
+
+			if($(window).width() <= 990) {
+				//var menu_site = document.getElementById('menu_nivel2').innerHTML;
+				//document.getElementById('topMain').innerHTML = menu_site;
+			} else {
+
+				$(function(){   
+					var nav = $('.div-topBar');   
+					$(window).scroll(function () { 
+						if ($(this).scrollTop() > 0) { 
+							nav.addClass("menu-fixo-top"); 
+						} else { 
+							nav.removeClass("menu-fixo-top"); 
+						} 
+					});  
+				});	
+			}
+
+			$(document).ready(function() {
+				if (typeof(jumpToAnchor) !== 'undefined') { 
+					var top = document.getElementById(jumpToAnchor).offsetTop;
+					window.scrollTo(0, top);
+				}
+			});
+
+			/*Jquery - Menu lateral*/
+			$(".sublinks").hide();
+			$(".menu_link").click(function () {    //$(".menu_link").mouseover(function () {
+				
+				$header = $(this);
+				//getting the next element
+				$content = $header.next();
+				//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+				$content.slideToggle(900);
+
+			});
+
+			/*Busca - Corpo Docente*/
+			$(document).ready(function(){
+				if (!$('#result_docente').length) return;
+
+				var params = new URLSearchParams(window.location.search);
+				var filtrosDocente = {
+					nome_docente: params.get('nome_docente') || '',
+					perfil_ods: params.get('perfil_ods') || params.get('ods_perfil') || '',
+					departamento: params.get('departamento') || '',
+					letra: params.get('letra') || ''
+				};
+
+				$('#nome_docente').val(filtrosDocente.nome_docente);
+				$('#ods_perfil').val(filtrosDocente.perfil_ods);
+				$('#departamento').val(filtrosDocente.departamento);
+
+				function atualizaUrlDocente()
+				{
+					var query = new URLSearchParams();
+
+					if (filtrosDocente.nome_docente) query.set('nome_docente', filtrosDocente.nome_docente);
+					if (filtrosDocente.perfil_ods) query.set('perfil_ods', filtrosDocente.perfil_ods);
+					if (filtrosDocente.departamento) query.set('departamento', filtrosDocente.departamento);
+					if (filtrosDocente.letra) query.set('letra', filtrosDocente.letra);
+
+					var novaUrl = window.location.pathname + (query.toString() ? '?' + query.toString() : '') + window.location.hash;
+					window.history.replaceState(null, '', novaUrl);
+				}
+
+				function temFiltroDocente()
+				{
+					return filtrosDocente.nome_docente || filtrosDocente.perfil_ods || filtrosDocente.departamento || filtrosDocente.letra;
+				}
+
+				function load_data()
+				{
+					$.ajax({
+						url:"/fmusp/portal/fetch.php",
+						method:"post",
+						data:{
+							nome_docente: filtrosDocente.nome_docente,
+							perfil_ods: filtrosDocente.perfil_ods,
+							departamento: filtrosDocente.departamento,
+							letra: filtrosDocente.letra
+						},
+						beforeSend: function() {
+							$('#loading_docente').show();       // Mostra o loading
+							$('#result_docente').hide();        // Esconde os resultados anteriores
+						},
+						success:function(data)
+						{
+							$('#result_docente').html(data);
+						},
+						complete: function() {
+							$('#loading_docente').hide();       // Esconde o loading
+							$('#result_docente').show();        // Mostra o resultado carregado
+						}
+					});
+				}
+				
+				$('#nome_docente').keyup(function(){
+					filtrosDocente.nome_docente = $(this).val();
+					filtrosDocente.letra = '';
+					atualizaUrlDocente();
+					load_data();
+				});
+
+				$('#ods_perfil').change(function(){
+					filtrosDocente.perfil_ods = $(this).val();
+					filtrosDocente.letra = '';
+					atualizaUrlDocente();
+					load_data();
+				});
+
+				$('#departamento').change(function(){
+					filtrosDocente.departamento = $(this).val();
+					filtrosDocente.letra = '';
+					atualizaUrlDocente();
+					load_data();
+				});
+
+				$('.btn-letras').click(function(){
+					filtrosDocente.letra = $(this).val();
+					atualizaUrlDocente();
+					load_data();
+				});
+
+				if (temFiltroDocente()) {
+					load_data();
+				}
+			});
+
+			$(document).ready(function(){
+				if (screen.width <= 812){
+					$(".submenu-footer").hide();
+
+					$(".submenu-click").click(function(){
+				    	$header = $(this);
+						
+						//getting the next element
+						$submenu = $header.next();
+						//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+						$submenu.slideToggle(900);
+				    });
+				}			    
+			});
+		</script>
+    
+        </div>
+
+
+    
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          
+          // Cria o item "Licenciamento Comercial" imediatamente acima de "Sobre o acervo"
+          const allElements = Array.from(document.querySelectorAll('a, li, span, p'));
+          const sobreAcervoItem = allElements.find(el => {
+            const txt = el.textContent.trim().toLowerCase();
+            return txt === 'sobre o acervo' || txt === '□ sobre o acervo' || txt.includes('sobre o acervo');
+          });
+
+          if (sobreAcervoItem) {
+            const targetContainer = sobreAcervoItem.closest('li') || sobreAcervoItem;
+            if (targetContainer && targetContainer.parentElement && !document.getElementById('itemLicenciamentoComercialMenu')) {
+              const novoItemMenu = targetContainer.cloneNode(true);
+              novoItemMenu.id = 'itemLicenciamentoComercialMenu';
+              const linkInterno = novoItemMenu.querySelector('a') || novoItemMenu;
+              linkInterno.id = 'linkLicenciamentoMenu';
+              linkInterno.href = '#licenciamento-comercial';
+              if (targetContainer.textContent.includes('□')) {
+                linkInterno.innerHTML = '□ &nbsp;Licenciamento Comercial';
+              } else {
+                linkInterno.textContent = 'Licenciamento Comercial';
+              }
+              targetContainer.parentElement.insertBefore(novoItemMenu, targetContainer);
+
+              novoItemMenu.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.renderizarFormulario('licenciamento');
+              });
+            }
+          }
+
+          // Monitora cliques nos itens do menu lateral
+          const links = Array.from(document.querySelectorAll('a'));
+
+          // Link "Acesso e Reprodução"
+          const linkAcesso = links.find(el => el.textContent.trim().includes('Acesso e Reprodução'));
+          if (linkAcesso) {
+            linkAcesso.addEventListener('click', function(e) {
+              e.preventDefault();
+              window.renderizarFormulario('acesso');
+            });
+          }
+
+          // Link "Doação de acervo"
+          const linkDoacao = links.find(el => {
+            const txt = el.textContent.trim().toLowerCase();
+            return txt.includes('doaç') && txt.includes('acervo');
+          });
+          if (linkDoacao) {
+            linkDoacao.addEventListener('click', function(e) {
+              e.preventDefault();
+              window.renderizarFormulario('doacao');
+            });
+          }
+
+          // =========================================================================
+          // FUNÇÃO DE LIMPEZA DO BANNER / TEXTO E PREPARAÇÃO DA ÁREA CENTRAL
+          // =========================================================================
+          function prepararEspacoCentral() {
+            const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, strong, span'));
+            const mainHeading = headings.find(el => el.textContent.trim().includes('Venha conhecer o Museu Histórico da FMUSP') || el.textContent.trim().includes('Centro de Pesquisa e Documentação'));
+            
+            const bannerImg = document.querySelector('img[src*="home"], img[src*="banner"], img[alt*="Museu"]') || 
+                              (mainHeading ? mainHeading.parentElement.querySelector('img') : null) ||
+                              document.querySelector('.conteudo img, #conteudo img, .main-content img');
+
+            if (bannerImg) bannerImg.style.display = 'none';
+
+            if (mainHeading && mainHeading.parentElement) {
+              const paragraphs = mainHeading.parentElement.querySelectorAll('p');
+              paragraphs.forEach(p => p.style.display = 'none');
+              mainHeading.textContent = 'Centro de Pesquisa e Documentação';
+              mainHeading.className = 'cpd-header-title';
+            }
+
+            const container = mainHeading ? mainHeading.parentElement : document.body;
+            
+            // Remove qualquer formulário central anteriormente renderizado
+            const existingForm = document.getElementById('cpdFormRoot');
+            if (existingForm) existingForm.remove();
+
+            return { container, mainHeading };
+          }
+
+          // =========================================================================
+          // DISPATCHER PRINCIPAL: RENDERIZA O FORMULÁRIO ESCOLHIDO NO ESPAÇO CENTRAL
+          // =========================================================================
+          window.renderizarFormulario = function(tipo) {
+            const { container, mainHeading } = prepararEspacoCentral();
+            const formElement = document.createElement('div');
+            formElement.id = 'cpdFormRoot';
+            formElement.className = 'cpd-form-card';
+
+            if (tipo === 'acesso') {
+              formElement.innerHTML = window.obterHtmlAcesso();
+            } else if (tipo === 'doacao') {
+              formElement.innerHTML = window.obterHtmlDoacao();
+            } else if (tipo === 'licenciamento') {
+              formElement.innerHTML = window.obterHtmlLicenciamento();
+            }
+
+            if (mainHeading && mainHeading.nextSibling) {
+              container.insertBefore(formElement, mainHeading.nextSibling);
+            } else {
+              container.appendChild(formElement);
+            }
+
+            // Inicializa contadores e listeners do formulário específico
+            window.inicializarEventosFormulario(tipo);
+            formElement.scrollIntoView({ behavior: 'smooth' });
+          };
+
+          // =========================================================================
+          // TEMPLATE 1: TERMO PARA ACESSO E REPRODUÇÃO DE ACERVO
+          // =========================================================================
+          window.obterHtmlAcesso = function() {
+            return `
+              <h2 class="cpd-header-subtitle">Termo para Acesso e Reprodução de Acervo</h2>
+              <div class="cpd-header-desc">
+                Documento nativamente digital para consulta presencial ou remota e reprodução de bens sob salvaguarda do Museu Histórico "Prof. Carlos da Silva Lacaz".
+              </div>
+
+              <form onsubmit="event.preventDefault(); alert('Solicitação de Acesso e Reprodução registada com sucesso!');">
+                <div class="cpd-section-box">
+                  <h3>A.1 Cadastro do Pesquisador / Solicitante</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Nome Completo *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>CPF ou Passaporte (Estrangeiros) *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Documento de Identificação (PDF/JPG/PNG, máx. 10 MB) *</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Vínculo Institucional *</label>
+                      <select required onchange="document.getElementById('boxAcessoCompVinculo').style.display = ['graduacao','pos','docente','imprensa','editora'].includes(this.value) ? 'flex' : 'none'">
+                        <option value="">Selecione...</option>
+                        <option value="graduacao">Discente de graduação</option>
+                        <option value="pos">Discente de pós-graduação</option>
+                        <option value="docente">Docente-pesquisador</option>
+                        <option value="externo">Pesquisador externo independente</option>
+                        <option value="imprensa">Profissional de imprensa</option>
+                        <option value="editora">Editora ou produtora</option>
+                        <option value="pf">Pessoa física sem vínculo acadêmico</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Instituição de Vínculo *</label>
+                      <input type="text" placeholder="Universidade, veículo ou 'Não se aplica'" required />
+                    </div>
+                    <div id="boxAcessoCompVinculo" class="cpd-field cpd-grid-full" style="display:none;">
+                      <label>Comprovante de Vínculo (Declaração de matrícula, carta de apresentação, crachá) *</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" />
+                    </div>
+                    <div class="cpd-field">
+                      <label>E-mail Institucional ou Pessoal *</label>
+                      <input type="email" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Telefone de Contato *</label>
+                      <input type="tel" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cpd-section-box">
+                  <h3>A.2 Finalidade da Consulta e do Uso Pretendido</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Natureza da Finalidade *</label>
+                      <select required>
+                        <option value="">Selecione...</option>
+                        <option>Pesquisa acadêmica (TCC, dissertação, tese, artigo)</option>
+                        <option>Pesquisa institucional ou curatorial</option>
+                        <option>Finalidade jornalística ou editorial</option>
+                        <option>Produção audiovisual ou documental</option>
+                        <option>Finalidade pessoal ou genealógica</option>
+                        <option>Outra</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Descrição Sucinta do Projeto (mínimo de 100 caracteres) *</label>
+                      <textarea id="descProjetoAcesso" rows="3" minlength="100" placeholder="Objetivos da pesquisa e relação com os itens solicitados" required></textarea>
+                      <small id="counterAcesso" style="color:#64748b; margin-top:4px;">Mínimo de 100 caracteres (0 preenchidos).</small>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Órgão de Fomento / Financiamento (se houver)</label>
+                      <input type="text" placeholder="FAPESP, CNPq, CAPES, etc." />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Aprovação em Comitê de Ética em Pesquisa (CEP/CONEP) *</label>
+                      <select onchange="document.getElementById('boxUploadCepAcesso').style.display = (this.value === 'Sim') ? 'flex' : 'none'">
+                        <option value="Não se aplica">Não se aplica</option>
+                        <option value="Sim">Sim (anexar parecer consubstanciado)</option>
+                        <option value="Não">Não</option>
+                      </select>
+                    </div>
+                    <div id="boxUploadCepAcesso" class="cpd-field cpd-grid-full" style="display:none;">
+                      <label>Upload do Parecer Consubstanciado CEP/CONEP (Obrigatório para dados de pacientes/prontuários) *</label>
+                      <input type="file" accept=".pdf" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cpd-section-box">
+                  <h3>A.3 Modalidade de Atendimento e Itens do Acervo</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Modalidade de Atendimento Pretendida *</label>
+                      <select id="selModAcesso" required onchange="window.chavearModAcesso(this.value)">
+                        <option value="">Selecione...</option>
+                        <option value="presencial">Consulta Presencial (in loco, no Museu)</option>
+                        <option value="remoto">Atendimento Remoto (envio de reprodução digital)</option>
+                        <option value="ambas">Ambas (presencial e reprodução)</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Código(s) de Tombamento / Inventário *</label>
+                      <input type="text" placeholder="Ex.: MHFMUSP-0142" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Quantidade Estimada de Itens / Páginas *</label>
+                      <input type="number" min="1" required />
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Descrição do(s) Item(ns) *</label>
+                      <textarea rows="2" required></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="blocoPresencialAcesso" class="cpd-section-box" style="display:none; background:#fafdfc; border-left:3px solid #136357; padding-left:14px;">
+                  <h3>A.4 Consulta Presencial (In Loco) — Agendamento</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field">
+                      <label>Data(s) Pretendida(s) para a Visita (até 3 opções) *</label>
+                      <input type="text" placeholder="Opção 1, Opção 2, Opção 3" />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Turno Preferencial *</label>
+                      <select><option>Manhã</option><option>Tarde</option></select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Duração Estimada *</label>
+                      <select><option>Até 2 horas</option><option>Meio período</option><option>Dia inteiro</option><option>Múltiplas sessões</option></select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Equipamento Especial Necessário</label>
+                      <input type="text" placeholder="Lupa, mesa de luz, leitor de microfilme" />
+                    </div>
+                  </div>
+                </div>
+
+                <div id="blocoRemotoAcesso" class="cpd-section-box" style="display:none; background:#fafdfc; border-left:3px solid #136357; padding-left:14px;">
+                  <h3>A.5 Atendimento Remoto — Reprodução e Entrega</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field">
+                      <label>Tipo de Reprodução Solicitada *</label>
+                      <select>
+                        <option>Consulta a cópia ou reprodução já existente</option>
+                        <option>Reprodução fotográfica digital (nova captura)</option>
+                        <option>Digitalização de documento textual</option>
+                        <option>Cópia de arquivo audiovisual ou sonoro</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Resolução / Formato Desejado *</label>
+                      <select><option>Baixa resolução (tela)</option><option>Alta resolução (editorial / impressão)</option></select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cpd-section-box">
+                  <h3>A.7 Declarações e Aceite (7 itens obrigatórios)</h3>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>Declaro que as informações prestadas são verdadeiras e correspondem ao real propósito da pesquisa.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>Comprometo-me a utilizar o material exclusivamente para a finalidade declarada, sem uso comercial não autorizado.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>Comprometo-me a incluir o crédito institucional obrigatório ao Museu na forma por ele indicada.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>Declaro estar ciente de que a reprodução não transfere direitos autorais de terceiros sobre a obra.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>No caso presencial, comprometo-me a observar as normas de manuseio e conservação preventiva.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>Autorizo o tratamento dos dados pessoais nos termos da Lei nº 13.709/2018 (LGPD).</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-acesso" onchange="window.validarAcesso()" /><span>Declaro ter lido e concordar integralmente com as cláusulas deste instrumento.</span></label>
+                </div>
+
+                <div style="text-align: right; margin-top: 20px;">
+                  <button type="submit" id="btnSubmitAcesso" class="cpd-btn-submit" disabled>Concordo e Enviar Solicitação</button>
+                </div>
+              </form>
+            `;
+          };
+
+          // =========================================================================
+          // TEMPLATE 2: TERMO DE DOAÇÃO DE ACERVO
+          // =========================================================================
+          window.obterHtmlDoacao = function() {
+            return `
+              <h2 class="cpd-header-subtitle">Termo de Doação de Acervo</h2>
+              <div class="cpd-header-desc">
+                Instrumento nativamente digital para doação, transferência plena de propriedade e custódia física de bens culturais ao Museu Histórico da FMUSP.
+              </div>
+
+              <form onsubmit="event.preventDefault(); alert('Proposta de doação submetida com sucesso! O comprovante digital foi gerado.');">
+                
+                <!-- A.1 Identificação do Doador -->
+                <div class="cpd-section-box">
+                  <h3>A.1 Identificação do Doador</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Tipo de Doador *</label>
+                      <select required>
+                        <option value="">Selecione...</option>
+                        <option>Pessoa Física</option>
+                        <option>Pessoa Jurídica</option>
+                        <option>Espólio (Herdeiros e Sucessores)</option>
+                        <option>Instituição Pública ou Privada</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Nome Completo ou Razão Social *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>CPF ou CNPJ *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Documento de Identificação (RG, CNH, Contrato Social) *</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Endereço Completo (Logradouro, nº, compl., bairro, cidade, UF, CEP) *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Telefone de Contato *</label>
+                      <input type="tel" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>E-mail de Contato *</label>
+                      <input type="email" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Grau de Relação com o Bem *</label>
+                      <select required onchange="document.getElementById('boxProcDoacao').style.display = (this.value !== 'Proprietário original') ? 'flex' : 'none'">
+                        <option>Proprietário original</option>
+                        <option>Herdeiro-sucessor</option>
+                        <option>Adquirente de terceiro</option>
+                        <option>Representante institucional</option>
+                      </select>
+                    </div>
+                    <div id="boxProcDoacao" class="cpd-field" style="display:none;">
+                      <label>Procuração ou Termo de Representação *</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.2 Descrição do Bem Cultural -->
+                <div class="cpd-section-box">
+                  <h3>A.2 Descrição do Bem Cultural Doado</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Categoria Museológica *</label>
+                      <select required>
+                        <option value="">Selecione...</option>
+                        <option>Instrumental médico-cirúrgico</option>
+                        <option>Documento arquivístico</option>
+                        <option>Obra bibliográfica ou raridade</option>
+                        <option>Espécime biológico ou anatômico</option>
+                        <option>Mobiliário e equipamento hospitalar histórico</option>
+                        <option>Iconografia (fotografias, ilustrações, cartazes)</option>
+                        <option>Objeto tridimensional diverso</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Denominação do Bem (popular e/ou técnica) *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Quantidade de Peças / Itens *</label>
+                      <input type="number" min="1" value="1" required />
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Descrição Física (material constitutivo, dimensões, marcas, nº de série) *</label>
+                      <textarea rows="3" required></textarea>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Datação ou Período Estimado</label>
+                      <input type="text" placeholder="Ex.: c. 1940, séc. XX" />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Estado de Conservação *</label>
+                      <select required>
+                        <option>Bom</option>
+                        <option>Regular</option>
+                        <option>Requer intervenção urgente</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Registro Fotográfico do Bem (Upload obrigatório de no mínimo 3 imagens) *</label>
+                      <input type="file" accept=".jpg,.jpeg,.png" multiple required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Riscos Biológicos, Químicos ou de Biossegurança? *</label>
+                      <select onchange="document.getElementById('boxLaudoBioDoacao').style.display = (this.value === 'Sim') ? 'flex' : 'none'">
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Presença de Material Biológico Humano ou Dados de Pacientes? *</label>
+                      <select id="selBioHumanoDoacao" onchange="document.getElementById('blocoCondicionalDoacaoA4').style.display = (this.value === 'Sim') ? 'block' : 'none'">
+                        <option value="Não">Não</option>
+                        <option value="Sim">Sim</option>
+                      </select>
+                    </div>
+                    <div id="boxLaudoBioDoacao" class="cpd-field cpd-grid-full" style="display:none;">
+                      <label>Laudo Técnico ou Ficha de Segurança</label>
+                      <input type="file" accept=".pdf" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.3 Histórico de Proveniência -->
+                <div class="cpd-section-box">
+                  <h3>A.3 Histórico de Proveniência e Cadeia de Custódia</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Origem do Bem (relato de aquisição, herança, uso profissional) *</label>
+                      <textarea rows="3" required></textarea>
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Cadeia de Custódia Anterior (proprietários conhecidos em ordem cronológica)</label>
+                      <textarea rows="2"></textarea>
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label class="cpd-checkbox-row">
+                        <input type="checkbox" required />
+                        <span>Declaro a origem lícita do bem, o qual não é objeto de furto, extravio, expropriação ou litígio.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.4 Bloco Condicional: Material Humano e LGPD -->
+                <div id="blocoCondicionalDoacaoA4" class="cpd-section-box" style="display:none; background:#fff8f8; border-left:3px solid #8b1e2f; padding-left:14px;">
+                  <h3 style="color:#8b1e2f;">A.4 Conformidade Ética e Dados Sensíveis (LGPD)</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field">
+                      <label>Consentimento Informado do Paciente / Família</label>
+                      <select><option>Não se aplica</option><option>Sim</option><option>Não</option></select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Anonimização Prévia Realizada?</label>
+                      <select><option>Sim</option><option>Não</option></select>
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Parecer CEP/CONEP (se houver)</label>
+                      <input type="file" accept=".pdf" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.5 Condições e Restrições -->
+                <div class="cpd-section-box">
+                  <h3>A.5 Condições e Restrições Declaradas pelo Doador</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field">
+                      <label>Restrições de Exposição ou Reprodução</label>
+                      <input type="text" placeholder="Ex.: vedação de partes anatômicas sem tarjamento" />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Solicitação de Crédito Nominal ao Doador?</label>
+                      <select><option>Sim</option><option>Não (manter anonimato)</option></select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.6 Declarações e Aceite (5 itens obrigatórios) -->
+                <div class="cpd-section-box">
+                  <h3>A.6 Declarações e Aceite (5 itens obrigatórios)</h3>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-doacao" onchange="window.validarDoacao()" /><span>Declaro que sou legítimo proprietário do(s) bem(ns) e que o mesmo está livre de ônus, gravames ou disputas judiciais.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-doacao" onchange="window.validarDoacao()" /><span>Declaro estar ciente de que a doação é gratuita, voluntária e irrevogável após a incorporação.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-doacao" onchange="window.validarDoacao()" /><span>Declaro ter lido e concordar integralmente com os termos e cláusulas deste instrumento.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-doacao" onchange="window.validarDoacao()" /><span>Autorizo o tratamento dos dados pessoais nos termos da Lei nº 13.709/2018 (LGPD).</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-doacao" onchange="window.validarDoacao()" /><span>Estou ciente de que o bem passará a integrar o patrimônio cultural sob salvaguarda institucional do Museu.</span></label>
+                </div>
+
+                <div style="text-align: right; margin-top: 20px;">
+                  <button type="submit" id="btnSubmitDoacao" class="cpd-btn-submit" disabled>Concordo e Assinar Digitalmente</button>
+                </div>
+              </form>
+            `;
+          };
+
+          // =========================================================================
+          // TEMPLATE 3: TERMO DE LICENCIAMENTO PARA USO COMERCIAL
+          // =========================================================================
+          window.obterHtmlLicenciamento = function() {
+            return `
+              <h2 class="cpd-header-subtitle">Licenciamento para Uso Comercial de Acervo</h2>
+              <div class="cpd-header-desc">
+                Instrumento apartado para autorização onerosa de imagens, reproduções ou dados do acervo para finalidade comercial, editorial ou publicitária.
+              </div>
+
+              <form onsubmit="event.preventDefault(); alert('Proposta de Licenciamento submetida para análise técnica e jurídica!');">
+                
+                <!-- A.1 Dados do Solicitante -->
+                <div class="cpd-section-box">
+                  <h3>A.1 Dados do Solicitante Comercial</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Tipo de Solicitante *</label>
+                      <select id="selTipoLic" required onchange="document.getElementById('boxRazaoLic').style.display = (this.value === 'Pessoa Jurídica') ? 'flex' : 'none'">
+                        <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                        <option value="Pessoa Física com atuação comercial">Pessoa Física com atuação comercial (autônomo, produtor)</option>
+                      </select>
+                    </div>
+                    <div id="boxRazaoLic" class="cpd-field cpd-grid-full">
+                      <label>Razão Social e Nome Fantasia *</label>
+                      <input type="text" />
+                    </div>
+                    <div class="cpd-field">
+                      <label>CNPJ ou CPF *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Comprovante de Inscrição (CNPJ) ou Identificação (CPF) *</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Endereço Completo da Empresa / Solicitante *</label>
+                      <input type="text" placeholder="Logradouro, nº, bairro, cidade, UF, CEP, país" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Representante Legal (Nome Completo e Cargo) *</label>
+                      <input type="text" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Procuração ou Contrato Social de Representação *</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>E-mail Corporativo *</label>
+                      <input type="email" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Telefone Corporativo *</label>
+                      <input type="tel" required />
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Setor de Atuação da Empresa *</label>
+                      <input type="text" placeholder="Ex.: Editorial, Audiovisual, Moda, Farmacêutico, Brindes, Tecnologia" required />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.2 Detalhamento do Projeto Comercial -->
+                <div class="cpd-section-box">
+                  <h3>A.2 Detalhamento do Projeto Comercial</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Item(ns) do Acervo Pretendido(s) (Códigos de Tombamento) *</label>
+                      <input type="text" placeholder="Ex.: MHFMUSP-0014, Coleção Histórica" required />
+                    </div>
+                    <div class="cpd-field cpd-grid-full">
+                      <label>Descrição do Produto ou Serviço Final (mínimo de 200 caracteres) *</label>
+                      <textarea id="descProjLic" rows="4" minlength="200" placeholder="Detalhe como a imagem será aplicada, qual o suporte (livro, embalagem, peça publicitária, streaming, produto físico) e objetivos comerciais" required></textarea>
+                      <small id="counterLic" style="color:#64748b; margin-top:4px;">Mínimo de 200 caracteres (0 preenchidos).</small>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Amostra ou Mockup do Uso Pretendido (Upload opcional)</label>
+                      <input type="file" accept=".pdf,.jpg,.jpeg,.png" />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Tiragem, Volume ou Alcance Estimado *</label>
+                      <input type="text" placeholder="Ex.: 3.000 exemplares / visualizações estimadas" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Território de Distribuição / Comercialização *</label>
+                      <select required>
+                        <option>Nacional</option>
+                        <option>Internacional</option>
+                        <option>Digital sem restrição geográfica</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Canais de Distribuição / Veiculação *</label>
+                      <input type="text" placeholder="Ex.: Livrarias, Ponto físico, E-commerce, Redes sociais" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Período de Exploração Comercial Pretendido *</label>
+                      <input type="text" placeholder="Ex.: 12 meses (01/2027 a 12/2027)" required />
+                    </div>
+                    <div class="cpd-field">
+                      <label>Exclusividade Pretendida?</label>
+                      <select onchange="document.getElementById('boxExclusividadeLic').style.display = (this.value === 'Sim') ? 'flex' : 'none'">
+                        <option value="Não">Não (regra institucional)</option>
+                        <option value="Sim">Sim (sujeito à diretoria)</option>
+                      </select>
+                    </div>
+                    <div id="boxExclusividadeLic" class="cpd-field cpd-grid-full" style="display:none;">
+                      <label>Justificativa para Solicitação de Exclusividade *</label>
+                      <textarea rows="2"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.3 Condições Financeiras -->
+                <div class="cpd-section-box">
+                  <h3>A.3 Condições Financeiras</h3>
+                  <div class="cpd-grid-2">
+                    <div class="cpd-field">
+                      <label>Modalidade de Contrapartida *</label>
+                      <select id="selFinancLic" required onchange="document.getElementById('boxIsencaoLic').style.display = (this.value === 'Isenção') ? 'flex' : 'none'">
+                        <option>Taxa fixa única de licenciamento</option>
+                        <option>Royalties sobre faturamento</option>
+                        <option>Modelo híbrido (taxa fixa + royalties)</option>
+                        <option value="Isenção">Isenção (projetos educacionais / sem fins lucrativos)</option>
+                      </select>
+                    </div>
+                    <div class="cpd-field">
+                      <label>Faturamento ou Preço de Venda Estimado (R$) *</label>
+                      <input type="text" placeholder="Base de cálculo de eventuais royalties" required />
+                    </div>
+                    <div id="boxIsencaoLic" class="cpd-field cpd-grid-full" style="display:none;">
+                      <label>Justificativa Fundamentada para Pedido de Isenção *</label>
+                      <textarea rows="2"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- A.4 Declarações Éticas Específicas -->
+                <div class="cpd-section-box">
+                  <h3>A.4 Declarações Éticas (Acervo Médico-Científico)</h3>
+                  <label class="cpd-checkbox-row">
+                    <input type="checkbox" required />
+                    <span>Declaro que o produto/serviço não promove tabaco, armas, discriminação, práticas de saúde sem comprovação científica ou exploração do sofrimento humano.</span>
+                  </label>
+                  <label class="cpd-checkbox-row">
+                    <input type="checkbox" required />
+                    <span>Declaro que o uso não fará alegações médicas enganosas nem induzirá endosso institucional do Museu ou da USP.</span>
+                  </label>
+                </div>
+
+                <!-- A.5 Declarações e Aceite (8 itens obrigatórios) -->
+                <div class="cpd-section-box">
+                  <h3>A.5 Declarações e Aceite (8 itens obrigatórios)</h3>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Declaro que as informações prestadas são verdadeiras, completas e correspondem ao real projeto comercial.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Comprometo-me a utilizar os itens exclusivamente nos termos, suportes, território e período aprovados.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Comprometo-me a incluir o crédito institucional obrigatório ao Museu em todo e qualquer material produzido.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Declaro estar ciente de que os direitos morais sobre o acervo são inalienáveis e permanecem com o Museu.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Declaro que o produto/serviço não associará o acervo a contextos antiéticos ou depreciativos.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Comprometo-me ao pagamento tempestivo das contrapartidas financeiras pelos canais oficiais da USP.</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Autorizo o tratamento dos dados pessoais conforme a Lei nº 13.709/2018 (LGPD).</span></label>
+                  <label class="cpd-checkbox-row"><input type="checkbox" class="chk-lic" onchange="window.validarLic()" /><span>Declaro ter lido e concordar integralmente com as cláusulas do Termo de Licenciamento Comercial.</span></label>
+                </div>
+
+                <div style="text-align: right; margin-top: 20px;">
+                  <button type="submit" id="btnSubmitLic" class="cpd-btn-submit" disabled>Concordo e Enviar Proposta de Licenciamento</button>
+                </div>
+              </form>
+            `;
+          };
+
+          // =========================================================================
+          // CONFIGURAÇÃO DOS GATILHOS E REGRAS DE VALIDAÇÃO ATIVA (PARTE C)
+          // =========================================================================
+          window.inicializarEventosFormulario = function(tipo) {
+            if (tipo === 'acesso') {
+              const txt = document.getElementById('descProjetoAcesso');
+              const c = document.getElementById('counterAcesso');
+              if (txt && c) {
+                txt.addEventListener('input', function() {
+                  c.textContent = 'Mínimo de 100 caracteres (' + this.value.length + ' preenchidos).';
+                  c.style.color = (this.value.length >= 100) ? '#136357' : '#8b1e2f';
+                });
+              }
+            } else if (tipo === 'licenciamento') {
+              const txt = document.getElementById('descProjLic');
+              const c = document.getElementById('counterLic');
+              if (txt && c) {
+                txt.addEventListener('input', function() {
+                  c.textContent = 'Mínimo de 200 caracteres (' + this.value.length + ' preenchidos).';
+                  c.style.color = (this.value.length >= 200) ? '#136357' : '#8b1e2f';
+                });
+              }
+            }
+          };
+
+          window.chavearModAcesso = function(val) {
+            const p = document.getElementById('blocoPresencialAcesso');
+            const r = document.getElementById('blocoRemotoAcesso');
+            if (p) p.style.display = (val === 'presencial' || val === 'ambas') ? 'block' : 'none';
+            if (r) r.style.display = (val === 'remoto' || val === 'ambas') ? 'block' : 'none';
+          };
+
+          window.validarAcesso = function() {
+            const checks = Array.from(document.querySelectorAll('.chk-acesso'));
+            const ok = checks.length === 7 && checks.every(c => c.checked);
+            const btn = document.getElementById('btnSubmitAcesso');
+            if (btn) btn.disabled = !ok;
+          };
+
+          window.validarDoacao = function() {
+            const checks = Array.from(document.querySelectorAll('.chk-doacao'));
+            const ok = checks.length === 5 && checks.every(c => c.checked);
+            const btn = document.getElementById('btnSubmitDoacao');
+            if (btn) btn.disabled = !ok;
+          };
+
+          window.validarLic = function() {
+            const checks = Array.from(document.querySelectorAll('.chk-lic'));
+            const ok = checks.length === 8 && checks.every(c => c.checked);
+            const btn = document.getElementById('btnSubmitLic');
+            if (btn) btn.disabled = !ok;
+          };
+        });
+      </script>
+    </body>
 </html>
